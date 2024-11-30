@@ -239,7 +239,7 @@ nav ul li a {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #095a55;
+    color: #ffa845;
     font-weight: 500;
 }
 
@@ -721,6 +721,7 @@ body.dark-theme {
 }
 .hero-title{
     color: var(--textcolor);
+    font-size: 40px;
 }
 
 .hero-text {
@@ -1158,13 +1159,13 @@ body.dark-theme {
 
 .card-title {
   margin-top: 10px;
-  color: white;
+  color: var(--textcolor);
 }
 
 .shipping-card{
   height: 300px;
-  background-color: rgba(5, 4, 65, 0.9);
-  border-radius: 40px;
+  background-color: #0e0e0e;
+  border-radius: 20px 120px;
 }
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
@@ -1469,3 +1470,16 @@ body.dark-theme {
     bottom: 0;
     filter: brightness(0.5);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
