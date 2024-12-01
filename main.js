@@ -53,9 +53,9 @@ document.addEventListener('mousemove', (e) => {
   const documentHeight = document.documentElement.scrollHeight;
   const maxWindowScroll = documentHeight - windowHeight;
 
-  // Sahifa va divni scroll qilish (teskari tomonga)
-  window.scrollTo(0, (1 - scrollPercent) * maxWindowScroll);
-  qiyshayganDiv.scrollTo((1 - scrollPercent) * (qiyshayganDiv.scrollWidth - qiyshayganDiv.clientWidth), 0);
+  // Sahifa va divni scroll qilish
+  window.scrollTo(0, scrollPercent * maxWindowScroll);
+  qiyshayganDiv.scrollTo(scrollPercent * (qiyshayganDiv.scrollWidth - qiyshayganDiv.clientWidth), 0);
 
   // Tugmaning pozitsiyasini yangilang
   scrollbarThumb.style.top = `${y}px`;
@@ -71,8 +71,8 @@ window.addEventListener('scroll', () => {
   const scrollbarHeight = scrollbar.offsetHeight;
   const thumbHeight = scrollbarThumb.offsetHeight;
   const maxScroll = scrollbarHeight - thumbHeight;
-  scrollbarThumb.style.top = `${(1 - scrollPercent) * maxScroll}px`;
+  scrollbarThumb.style.top = `${scrollPercent * maxScroll}px`;
 
-  // Divni ham scroll qilish (teskari tomonga)
-  qiyshayganDiv.scrollTo((1 - scrollPercent) * (qiyshayganDiv.scrollWidth - qiyshayganDiv.clientWidth), 0);
+  // Divni ham scroll qilish
+  qiyshayganDiv.scrollTo(scrollPercent * (qiyshayganDiv.scrollWidth - qiyshayganDiv.clientWidth), 0);
 });
