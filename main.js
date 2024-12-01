@@ -26,3 +26,53 @@ form.addEventListener("submit", (e) => {
       submitButton.style.cursor = "pointer";
     });
 });
+const scrollbar = document.getElementById('myScrollbar');
+const scrollbarThumb = document.getElementById('scrollbarThumb');
+const qiyshayganDiv = document.querySelector('.qiyshaygan-div');
+
+let isDragging = false;
+let startY = 0;
+
+scrollbarThumb.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startY = e.clientY - scrollbarThumb.offsetTop;
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+
+  e.preventDefault();
+
+  const y = e.clientY - startY;
+  const scrollbarHeight = scrollbar.offsetHeight;
+  const thumbHeight = scrollbarThumb.offsetHeight;
+  const maxScroll = scrollbarHeight - thumbHeight;
+
+  const scrollPercent = y / maxScroll;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+  const maxWindowScroll = documentHeight - windowHeight;
+
+  // Sahifa va divni scroll qilish (teskari tomonga)
+  window.scrollTo(0, (1 - scrollPercent) * maxWindowScroll);
+  qiyshayganDiv.scrollTo((1 - scrollPercent) * (qiyshayganDiv.scrollWidth - qiyshayganDiv.clientWidth), 0);
+
+  // Tugmaning pozitsiyasini yangilang
+  scrollbarThumb.style.top = `${y}px`;
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+window.addEventListener('scroll', () => {
+  // Sahifa scroll qilinganda tugmaning pozitsiyasini yangilang
+  const scrollPercent = window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight);
+  const scrollbarHeight = scrollbar.offsetHeight;
+  const thumbHeight = scrollbarThumb.offsetHeight;
+  const maxScroll = scrollbarHeight - thumbHeight;
+  scrollbarThumb.style.top = `${(1 - scrollPercent) * maxScroll}px`;
+
+  // Divni ham scroll qilish (teskari tomonga)
+  qiyshayganDiv.scrollTo((1 - scrollPercent) * (qiyshayganDiv.scrollWidth - qiyshayganDiv.clientWidth), 0);
+});
