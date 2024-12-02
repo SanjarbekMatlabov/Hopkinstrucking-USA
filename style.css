@@ -82,6 +82,7 @@ nav ul li a {
 
 .container3 {
     position: relative;
+    margin-left: 20px;
     min-width: 1100px;
     min-height: 550px;
     display: flex;
