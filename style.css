@@ -1710,7 +1710,7 @@ body .footer .content {
   border-radius: 15px;
   padding: 35px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: all var(--transition-speed) ease;
+  transition: all .3s ease;
   transform-origin: center;
 }
 
@@ -1723,7 +1723,7 @@ body .footer .content {
   font-size: 3rem;
   color: var(--textcolor);
   margin-bottom: 20px;
-  transition: transform var(--transition-speed) ease;
+  transition: transform .3s ease;
 }
 
 .mission-card:hover .mission-icon {
