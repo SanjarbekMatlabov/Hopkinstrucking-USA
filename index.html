@@ -79,10 +79,12 @@
         <header class="headers">
             <div class="containeri header-content">
                 <h1>Reliable Delivery, Every Time</h1>
-                <p>We're committed to getting your cargo where it needs to be, when it needs to be there. With years of experience and cutting-edge tracking technology, we ensure on-time delivery and the safety of your shipment.</p>
+                <p>We're committed to getting your cargo where it needs to be, when it needs to be there. With years of
+                    experience and cutting-edge tracking technology, we ensure on-time delivery and the safety of your
+                    shipment.</p>
             </div>
         </header>
-    
+
         <div class="containeri">
             <div class="mission-grid">
                 <div class="mission-card">
@@ -90,31 +92,37 @@
                         <i class="fas fa-shipping-fast"></i>
                     </div>
                     <h2>Expertise in Every Shipment</h2>
-                    <p>Our team of highly trained and experienced professionals is dedicated to providing top-tier service. We meticulously handle each shipment to meet the highest quality standards.</p>
+                    <p>Our team of highly trained and experienced professionals is dedicated to providing top-tier
+                        service. We meticulously handle each shipment to meet the highest quality standards.</p>
                 </div>
-    
+
                 <div class="mission-card">
                     <div class="mission-icon">
                         <i class="fas fa-heart"></i>
                     </div>
                     <h2>Dedicated to Your Satisfaction</h2>
-                    <p>We go the extra mile to understand and meet your needs. Our commitment to open and effective communication ensures a smooth and positive experience.</p>
+                    <p>We go the extra mile to understand and meet your needs. Our commitment to open and effective
+                        communication ensures a smooth and positive experience.</p>
                 </div>
-    
+
                 <div class="mission-card">
                     <div class="mission-icon">
                         <i class="fas fa-globe"></i>
                     </div>
                     <h2>Working Towards a Better Future</h2>
-                    <p>We believe in the power of collaboration. By fostering mutual respect and trust with our customers, partners, and employees, we create a unified team dedicated to achieving shared goals.</p>
+                    <p>We believe in the power of collaboration. By fostering mutual respect and trust with our
+                        customers, partners, and employees, we create a unified team dedicated to achieving shared
+                        goals.</p>
                 </div>
             </div>
         </div>
-    
+
         <section class="media-section">
             <div class="container media-content">
                 <h2>United for Positive Change</h2>
-                <p>We work together, with our employees, partners, and community, to address social challenges and contribute to the betterment of society. Our commitment goes beyond shipping – we're building a better world.</p>
+                <p>We work together, with our employees, partners, and community, to address social challenges and
+                    contribute to the betterment of society. Our commitment goes beyond shipping – we're building a
+                    better world.</p>
             </div>
         </section>
         <section class="section2 blog" aria-label="blog" id="service" style="background-color: #0e0e0e;">
@@ -272,8 +280,55 @@
                             <textarea required name="Message"></textarea>
                             <span>Write your message here...</span>
                         </div>
-                        <div class="inputBox w100">
-                            <input type="submit" value="Send">
+                        <label>
+                            <input type="checkbox" id="myCheckbox">
+                            <p>By providing your cell phone number, you agree to receive calls and texts to your number
+                                from Zaiets Transportation LLC on issues and ways to get involved. Message frequency
+                                varies. STOP to quit. Message and data
+                                rates may apply.</p>
+                        </label>
+                        <div class="button">
+                            <input type="submit" value="Send" id="submitButton" disabled>
+                            <script>
+                                const checkbox = document.getElementById('myCheckbox');
+                                const submitButton2 = document.getElementById('submitButton');
+
+                                // Checkbox holatini kuzatish
+                                checkbox.addEventListener('change', () => {
+                                    submitButton2.disabled = !checkbox.checked;
+                                });
+                            </script>
+                            <style>
+                                .button input[type="submit"]:disabled {
+                                    background-color: #cccccc;
+                                    cursor: not-allowed;
+                                }
+
+                                label {
+                                    display: grid;
+                                    grid-template-columns: auto 1fr;
+                                    /* Checkbox va matn yonma-yon */
+                                    gap: 10px;
+                                    /* Checkbox va matn orasidagi masofa */
+                                    align-items: center;
+                                    /* Checkbox va matnni vertikal markazlash */
+                                }
+
+                                .button input {
+                                    padding: 10px;
+                                    height: 100%;
+                                    width: 160%;
+                                    border-radius: 5px;
+                                    border: none;
+                                    color: #fff;
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                    letter-spacing: 1px;
+                                    cursor: pointer;
+                                    transition: all 0.3s ease;
+                                    background: black;
+                                }
+                            </style>
                         </div>
                     </form>
                 </div>
@@ -696,7 +751,8 @@
 
                     </ul>
                 </div>
-                <p class="footer__copy">HOPKINS TRUCKING LLC | ©Copyright All rights reserved</p>
+                <p class="footer__copy">HOPKINS TRUCKING LLC | ©Copyright All rights reserved | <a
+                        href="privasy.html">Privacy & Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
             </div>
         </div>
         <svg style="position:fixed; top:100vh">
