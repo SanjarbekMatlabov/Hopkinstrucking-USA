@@ -26,6 +26,7 @@ form.addEventListener("submit", (e) => {
       submitButton.style.cursor = "pointer";
     });
 });
+
 const scrollbar = document.getElementById('myScrollbar');
 const scrollbarThumb = document.getElementById('scrollbarThumb');
 const qiyshayganDiv = document.querySelector('.qiyshaygan-div');
